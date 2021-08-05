@@ -1,13 +1,13 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './Navbar.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./Navbar.css";
 
 const Navbar = () => {
     return (
-        <nav className='navbar'>
-            <Link className='home-link' to='/'>
-                <i class="fab fa-reddit"></i>
-                <p className='link-description'>RedditDark</p>
+        <nav className="navbar">
+            <Link className="home-link" to="/">
+                <i className="fab fa-reddit nav-links"></i>
+                <p className="nav-links">Reddit<span className="title-emphasis">Dark</span></p>
             </Link>
         </nav>
     )

@@ -5,3 +5,25 @@
     width: 100%;
     height: 5vh;
 }
+
+.home-link {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: var(--white);
+}
+
+.nav-links {
+    padding: 0 0.5rem;
+    font-size: 1.5rem;
+}
+
+.fa-reddit {
+    font-size: 2rem;
+}
+
+.title-emphasis {
+    color: var(--purple);
+}
