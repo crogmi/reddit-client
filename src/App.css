@@ -1,7 +1,18 @@
-.App {
-  text-align: center;
+:root {
+  --purple: #BB86FC;
+  --mid-purple: #3700B3;
+  --teal: #03DAC5;
+  --dark-grey: #121212;
+  --black: #000000;
+  --white: #FFFFFF;
+  --red: #CF6679;
 }
 
+.App {
+  text-align: center;
+  background-color: var(--dark-grey);
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+}
 
 .App-header {
   background-color: #282c34;
