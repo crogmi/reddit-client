@@ -1,7 +1,7 @@
 // create fake json object to be used
 // Later on, retrieve the json object through the reddit api
 
-export const redditJson = ['nba'];
+export const searchTerm = '';
 
 export const fetchPosts = {
     '123': {
