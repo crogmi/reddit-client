@@ -1,7 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // Include imports from each component here
-import ROUTES from './routes';
+// Import store and include a provider with the attribute store set to the store
+import ROUTES from "./routes";
 import Navbar from "./containers/Navbar/Navbar";
 import Home from "./containers/Home/Home";
 import "./App.css";
