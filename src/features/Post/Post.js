@@ -21,10 +21,9 @@ const Post = (props) => {
                     <p className="score-text">{score}</p>
                     <i class="fas fa-arrow-circle-down score-down"></i>
                 </div>
-                <div className="info-container">
+                <div className="info-container"> 
                     <h1 className="post-title">{title}</h1>
                     <img className="post-image" src={url} alt='' />
-                    <p className="post-user">Posted by {user}</p>
                 </div>
                 <div className="post-footer">
                     <p className="post-user">Posted by {user}</p>

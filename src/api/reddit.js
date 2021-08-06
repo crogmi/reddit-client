@@ -21,11 +21,11 @@ const reddit = {
             comments: [
                 {
                     user: "Charles", 
-                    Comment: "The Clippers are bad"
+                    text: "The Clippers are bad"
                 },
                 {
                     user: "Bryce",
-                    comment: "They will always be the JV team in the league"
+                    text: "They will always be the JV team in the league"
                 }
             ]
         },
@@ -42,11 +42,11 @@ const reddit = {
             comments: [
                 {
                     user: "Patrick", 
-                    Comment: "Gang gang."
+                    text: "Gang gang."
                 },
                 {
                     user: "Bryce",
-                    comment: "We are winners."
+                    text: "We are winners."
                 }
             ]
         }
