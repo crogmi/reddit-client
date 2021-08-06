@@ -8,7 +8,7 @@ const Post = () => {
     const posts = [];
 
     for (let i = 0; i < postKeys.length; i++) {
-        let {title, num_comments, score, url, user} = fetchedPosts[postKeys[i]];
+        let {title, score, url, user} = fetchedPosts[postKeys[i]];
         posts.push (
             <div className="posts-container">
                 <div className="score-container">

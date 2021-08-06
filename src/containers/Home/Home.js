@@ -9,10 +9,6 @@ const Home = () => {
     
     const { isLoading, error, searchTerm, selectedSubreddit } = reddit;
     const posts = reddit.fetchPosts;
-    
-    // Need to restructure this as there is an ID key before the .comments and .num_comments
-    const comments = posts.comments;
-    const num_comments = posts.num_comments;
     const hideComments = true;
 
     return (
