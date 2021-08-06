@@ -14,13 +14,9 @@ const App = ({ match }) => {
         <Navbar />
         <body>
           <main>
-            {/* Uncomment when the components have been imported from their respective pages */}
             {/* **************************************** ROUTES **************************************** */}
             <Route path={ROUTES.HOME} exact component={Home} />
-            { /*<Route path={ROUTES.SUBREDDIT} component={Subreddit} /> */}
           </main>
-          <footer>
-          </footer>
         </body>
       </div>
     </Router>
