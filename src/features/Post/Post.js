@@ -19,13 +19,7 @@ const Post = () => {
                 <div className="info-container">
                     <h1 className="post-title">{title}</h1>
                     <img className="post-image" src={url} alt='' />
-                    <div className="post-footer">
-                        <p className="post-user">Posted by {user}</p>
-                        <div className="comment-container">
-                            <i class="far fa-comment-alt"></i>
-                            <p className="post-comments">{num_comments}</p>
-                        </div>
-                    </div>
+                    <p className="post-user">Posted by {user}</p>
                 </div>
             </div>
         )
