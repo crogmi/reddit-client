@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Comments.css";
 
 const Comments = (props) => {
 
-    const hideComments = props.hideComments;
     const comments = props.comments;
+    const num_comments = props.num_comments;
     const commentsList = [];
     let displayedComments;
+    
+    const [hideComments, setHideComments] = useState(true);
+
+    const onClick = (e) => {
+        e.preventDefault();
+        setHideComments(!hideComments);
+    }
 
     for (let i = 0; i < comments.length; i++) {
         let user = comments[i].user;
@@ -20,13 +27,17 @@ const Comments = (props) => {
     };
 
     if (hideComments) {
-        displayedComments = commentsList;
-    } else {
         displayedComments = [];
+    } else {
+        displayedComments = commentsList;
     }
 
     return (
         <div className="comments-container">
+            <button onClick={onClick}>
+                <i class="far fa-comment-alt"></i>
+                <p className="post-comments">{num_comments}</p>
+            </button>
             {displayedComments}
         </div>
     )
