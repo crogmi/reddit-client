@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
-import reddit from "../../api/reddit";
+import reddit from "../../api/fakeReddit";
 import Post from "../../features/Post/Post";
 import "./Home.css";
 

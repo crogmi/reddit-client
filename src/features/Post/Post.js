@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import reddit from "../../api/reddit";
+import reddit from "../../api/fakeReddit";
 import './Post.css';
 
 // Import feature components to the overall post
