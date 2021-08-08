@@ -19,7 +19,7 @@ const Post = (props) => {
         }
 
         posts.push (
-            <div className="posts-container">
+            <div className="posts-container" key={i+1}>
                 <Score score={score} />
                 <div className="info-container"> 
                     <h1 className="post-title">{title}</h1>
@@ -34,7 +34,7 @@ const Post = (props) => {
     }
 
     return (
-        <div className="card-list">
+        <div className="post-list">
             {posts}
         </div>
     )
