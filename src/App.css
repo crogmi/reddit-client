@@ -24,4 +24,5 @@ button {
   background-color: transparent;
   color: var(--white);
   border: none;
+  cursor: pointer;
 }
