@@ -23,7 +23,7 @@ const Comments = (props) => {
         let user = comments[i].user;
         let text = comments[i].text;
         commentsList.push(
-            <div className="comment-container">
+            <div className="comment-container" key={i+1} >
                 <p className="comment-user">Posted by: {user}</p>
                 <p className="comment-text">{text}</p>
             </div>
