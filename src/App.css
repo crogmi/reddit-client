@@ -6,6 +6,7 @@
   --black: #000000;
   --white: #FFFFFF;
   --red: #CF6679;
+  --green: #66cf6d;
 }
 
 .App {
@@ -17,4 +18,11 @@
 
 .App-link {
   color: #61dafb;
+}
+
+button {
+  background-color: transparent;
+  color: var(--white);
+  border: none;
+  cursor: pointer;
 }

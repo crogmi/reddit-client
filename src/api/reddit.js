@@ -1,4 +1,3 @@
-import React from "react";
 // create fake json object to be used
 // Later on, retrieve the json object through the reddit api
 
@@ -12,7 +11,7 @@ const reddit = {
             title: "Los Angeles Clippers",
             url: "https://www.nba.com/.element/img/1.0/teamsites/logos/teamlogos_500x500/lac.png",
             score: 1900,
-            num_comments: 180,
+            num_comments: 2,
             view_count: 5000,
             ups: 2000,
             downs: 100,
@@ -21,11 +20,11 @@ const reddit = {
             comments: [
                 {
                     user: "Charles", 
-                    Comment: "The Clippers are bad"
+                    text: "The Clippers are bad"
                 },
                 {
                     user: "Bryce",
-                    comment: "They will always be the JV team in the league"
+                    text: "They will always be the JV team in the league"
                 }
             ]
         },
@@ -33,7 +32,7 @@ const reddit = {
             title: "Los Angeles Lakers",
             url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Los_Angeles_Lakers_logo.svg/1200px-Los_Angeles_Lakers_logo.svg.png",
             score: 5500,
-            num_comments: 750,
+            num_comments: 2,
             view_count: 10000,
             ups: 5500,
             downs: 0,
@@ -42,11 +41,11 @@ const reddit = {
             comments: [
                 {
                     user: "Patrick", 
-                    Comment: "Gang gang."
+                    text: "Gang gang."
                 },
                 {
                     user: "Bryce",
-                    comment: "We are winners."
+                    text: "We are winners."
                 }
             ]
         }
