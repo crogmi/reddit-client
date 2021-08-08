@@ -31,11 +31,15 @@ const Score = (props) => {
 
     return (
         <div className="score">
-            <button onClick={upClick} style={upStyle}>
+            <button onClick={upClick} 
+                    style={upStyle}
+                    data-testid="up_vote" >
                 <i class="fas fa-arrow-circle-up score-up"></i>
             </button>
             <p className="score-text">{score}</p>
-            <button onClick={downClick} style={downStyle}>
+            <button onClick={downClick} 
+                    style={downStyle}
+                    data-testid="down_vote" >
                 <i class="fas fa-arrow-circle-down score-down"></i>
             </button>
         </div>

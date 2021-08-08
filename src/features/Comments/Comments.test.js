@@ -17,7 +17,6 @@ describe("Comments", () => {
     ];
     const num_comments = 2;
 
-
     it("displays comments on click", () => {
         render(<Comments comments={comments} 
                          num_comments={num_comments} />);
