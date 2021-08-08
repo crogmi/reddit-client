@@ -8,12 +8,6 @@ const Home = () => {
     
     const { isLoading, error, searchTerm, selectedSubreddit } = reddit;
     const posts = reddit.fetchPosts;
-    const [hideComments, setHideComments] = useState(true);
-
-    const onClick = (e) => {
-        e.preventDefault();
-        setHideComments(!hideComments);
-    }
 
     return (
         <div className="home">
@@ -21,9 +15,7 @@ const Home = () => {
                   error={error}
                   searchTerm={searchTerm}
                   selectedSubreddit={selectedSubreddit}
-                  posts={posts}
-                  hideComments={hideComments}
-                  onClick={onClick} />
+                  posts={posts} />
         </div>
     )
 }

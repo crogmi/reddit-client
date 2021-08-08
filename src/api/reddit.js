@@ -1,4 +1,3 @@
-import React from "react";
 // create fake json object to be used
 // Later on, retrieve the json object through the reddit api
 

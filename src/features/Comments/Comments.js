@@ -4,13 +4,17 @@ import "./Comments.css";
 const Comments = (props) => {
 
     const comments = props.comments;
-    const num_comments = props.num_comments;
+    let num_comments = props.num_comments;
     const commentsList = [];
     let displayedComments;
+
+    if (num_comments > 999) {
+        num_comments = (num_comments/1000).toFixed(1).concat("K");
+    } 
     
     const [hideComments, setHideComments] = useState(true);
 
-    const onClick = (e) => {
+    const commentClick = (e) => {
         e.preventDefault();
         setHideComments(!hideComments);
     }
@@ -34,7 +38,7 @@ const Comments = (props) => {
 
     return (
         <div className="comments-container">
-            <button onClick={onClick}>
+            <button onClick={commentClick}>
                 <i class="far fa-comment-alt"></i>
                 <p className="post-comments">{num_comments}</p>
             </button>
