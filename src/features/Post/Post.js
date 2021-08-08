@@ -1,3 +1,5 @@
+// Need to incorporate the fetch to get posts from the actual reddit API
+
 import React, { useState } from "react";
 import reddit from "../../api/fakeReddit";
 import './Post.css';
