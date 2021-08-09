@@ -9,15 +9,11 @@
   --green: #66cf6d;
 }
 
-.App {
+.app {
   text-align: center;
   background-color: var(--dark-grey);
   font-family: Verdana, Arial, Helvetica, sans-serif;
   color: var(--white);
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 button {

@@ -30,7 +30,7 @@ export const redditSlice = createSlice({
         setSearchTerm(state, action) {
             state.searchTerm = action.payload;
         },
-        setSelectedSubReddit(state, action) {
+        setSelectedSubreddit(state, action) {
             state.selectedSubreddit = action.payload;
             state.searchTerm = false;
         },
@@ -62,7 +62,7 @@ export const {
     getPostsSuccess,
     getPostsFailed,
     setSearchTerm,
-    setSelectedSubReddit,
+    setSelectedSubreddit,
     toggleShowingComments,
     startGetComments,
     getCommentsSuccess,
@@ -109,9 +109,10 @@ export const selectFilteredPosts = createSelector(
     (posts, searchTerm) => {
         if (searchTerm !== '') {
             return posts.filter((post) => {
-                return post.selectFilteredPosts.toLowerCase().includes(searchTerm.toLowerCase())
+                return post.title.toLowerCase().includes(searchTerm.toLowerCase())
             });
         }
+        return posts;
     }
 );
 
