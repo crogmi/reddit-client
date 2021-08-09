@@ -1,7 +1,7 @@
 import React from "react";
 import { render, fireEvent, waitFor, screen, within } from "@testing-library/react";
 import '@testing-library/jest-dom';
-import Comments from "./Comments";
+import Comments from "./Comment";
 
 /* *************************** Unit Test *************************** */
 describe("Comments", () => {

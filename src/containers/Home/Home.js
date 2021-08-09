@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Post from "../../features/Post/Post";
-import { redditSlice, 
-         toggleShowingComments, 
+import { setSearchTerm, 
          selectFilteredPosts,
          fetchPosts,
          fetchComments } from "../../store/redditSlice";

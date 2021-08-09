@@ -1,16 +1,19 @@
-// Need to incorporate the fetch to get posts from the actual reddit API
-
-import React, { useState } from "react";
-import reddit from "../../api/fakeReddit";
+import React, { useState, Skeleton } from "react";
 import './Post.css';
 // Import feature components to the overall post
-import Comments from "../Comments/Comments";
+import Comment from "../Comments/Comment";
 import Score from "../Score/Score";
 
 const Post = (props) => {
-    const post = props.post;
-    const onToggleComments = props.onToggleComments;
-    const {title, score, comments, num_comments, author} = post;
+    const {post, onToggleComments} = props;
+    const { title, 
+            score, 
+            comments, 
+            num_comments, 
+            author,
+            showingComments,
+            loadingComments,
+            errorComments } = post;
     let preview;
 
     if (post.preview !== undefined) {
@@ -18,6 +21,42 @@ const Post = (props) => {
         preview = preview.replace("&amp;s", "&s");
     }
 
+    const onClick = (e) => {
+        e.preventDefault();
+        onToggleComments(post.permalink)
+    }
+    
+    const displayComments = () => {
+        if (errorComments) {
+            return (
+                <div>
+                    <h3>Error loading comments</h3>
+                </div>
+            );
+        }
+    
+        if (loadingComments) {
+            return (
+                <div>
+                    <Skeleton />
+                    <Skeleton />
+                    <Skeleton />
+                    <Skeleton />
+                </div>
+            );
+        }
+    
+        if (showingComments) {
+            return (
+                <div>
+                    {comments.map((comment) => (
+                        <Comment comment={comment} key={comment.id} />
+                    ))}
+                </div>
+            );
+        }
+        return null;
+    }
 
     return (
         <article key={post.id}>
@@ -29,38 +68,17 @@ const Post = (props) => {
                 <img src={preview} alt='' className="post-image" />
             </div>
             <div className="post-footer">
-                {/* Need to reconfigure the comments portion */}
                 <p>Posted by: {author}</p>
-                <Comments num_comments={num_comments}
-                          comments={comments} />
+                <button type="button"
+                        className={`showing-comments ${post.showingComments}`}  
+                        onClick={onClick} >
+                    <i class="far fa-comment-alt"></i>
+                    <p className="post-comments">{num_comments}</p>
+                </button>
+                {displayComments()}
             </div>
         </article>
     )
 }
 
 export default Post;
-
-
-// const posts = [];
-
-// for (let i = 0; i < postKeys.length; i++) {
-//     let {title, selftext, score, url, user, num_comments, comments} = fetchedPosts[postKeys[i]];
-
-//     if (score > 999) {
-//         score = (score/1000).toFixed(1).concat("K");
-//     }
-
-//     posts.push (
-//         <div className="posts-container" key={i+1}>
-//             <Score score={score} />
-//             <div className="info-container"> 
-//                 <h1 className="post-title">{title}</h1>
-//                 <h2 className="post-text">{selftext}</h2>
-//                 <img className="post-image" src={url} alt='' />
-//                 <p className="post-user">Posted by {user}</p>
-//             </div>
-//             <Comments comments={comments}
-//                       num_comments={num_comments} />
-//         </div>
-//     )
-// }

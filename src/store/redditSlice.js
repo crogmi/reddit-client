@@ -43,15 +43,16 @@ export const redditSlice = createSlice({
                 return;
             }
             state.posts[action.payload].loadingComments = true;
-            state.posts[action.payload].error = false;
+            state.posts[action.payload].errorComments = false;
         },
         getCommentsSuccess(state, action) {
-            state.posts[action.payload].loadingComments = false;
-            state.posts[action.payload].comments = action.payload.comments;
+            state.posts[action.payload.index].loadingComments = false;
+            state.posts[action.payload].errorComments = false;
+            state.posts[action.payload.index].comments = action.payload.comments;
         },
         getCommentsFailed(state, action) {
             state.posts[action.payload].loadingComments = false;
-            state.posts[action.payload].loadingComments = true;
+            state.posts[action.payload].errorComments = true;
         }
     }
 });
@@ -81,7 +82,7 @@ export const fetchPosts = (subreddit) => async (dispatch) => {
             ...post,
             showingComments: false,
             comments: [],
-            laodingComments: false,
+            loadingComments: false,
             errorComments: false
         }));
         dispatch(getPostsSuccess(postsWithMetaData));

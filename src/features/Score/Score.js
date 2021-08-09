@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Score.css";
 
 const Score = (props) => {
-    const score = props.score;
+    let score = props.score;
     const [upColor, setUpColor] = useState("var(--white)");
     const [downColor, setDownColor] = useState("var(--white)");
 
@@ -24,6 +24,10 @@ const Score = (props) => {
         } else {
             setDownColor("var(--white)");
         }
+    }
+
+    if (score > 999) {
+        score = (score/1000).toFixed(1).concat("K");
     }
 
     const upStyle = {color: upColor};
