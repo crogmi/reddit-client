@@ -1,33 +1,28 @@
-import React, { useState, Skeleton } from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import Skeleton from "react-loading-skeleton";
 import './Post.css';
 // Import feature components to the overall post
 import Comment from "../Comments/Comment";
 import Score from "../Score/Score";
+import { prependToMemberExpression } from "@babel/types";
 
 const Post = (props) => {
     const {post, onToggleComments} = props;
     const { title, 
             score, 
-            comments, 
             num_comments, 
             author,
-            showingComments,
-            loadingComments,
-            errorComments } = post;
+            permalink } = post;
     let preview;
 
     if (post.preview !== undefined) {
         preview = post.preview.images[0].source.url;
         preview = preview.replace("&amp;s", "&s");
     }
-
-    const onClick = (e) => {
-        e.preventDefault();
-        onToggleComments(post.permalink)
-    }
     
     const displayComments = () => {
-        if (errorComments) {
+        if (post.errorComments) {
             return (
                 <div>
                     <h3>Error loading comments</h3>
@@ -35,7 +30,7 @@ const Post = (props) => {
             );
         }
     
-        if (loadingComments) {
+        if (post.loadingComments) {
             return (
                 <div>
                     <Skeleton />
@@ -46,10 +41,10 @@ const Post = (props) => {
             );
         }
     
-        if (showingComments) {
+        if (post.showingComments) {
             return (
                 <div>
-                    {comments.map((comment) => (
+                    {post.comments.map((comment) => (
                         <Comment comment={comment} key={comment.id} />
                     ))}
                 </div>
@@ -70,8 +65,8 @@ const Post = (props) => {
             <div className="post-footer">
                 <p>Posted by: {author}</p>
                 <button type="button"
-                        className={`showing-comments ${post.showingComments}`}  
-                        onClick={onClick} >
+                        className={`icon-action-button ${post.showingComments && "showing-comments"}`}  
+                        onClick={() => onToggleComments(permalink)} >
                     <i class="far fa-comment-alt"></i>
                     <p className="post-comments">{num_comments}</p>
                 </button>

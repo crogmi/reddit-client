@@ -10,7 +10,7 @@ import "./Home.css";
 
 const Home = () => {
     const reddit = useSelector((state) => state.reddit);
-    const { isLoading, error, searchTerm, selectedSubreddit } = reddit;
+    const { isLoading, hasError, searchTerm, selectedSubreddit } = reddit;
     const posts = useSelector(selectFilteredPosts);
     const dispatch = useDispatch();
 
@@ -33,12 +33,18 @@ const Home = () => {
         );
     };
 
-    if (error) {
+    if (hasError) {
         return (
-            <div className="error">
-                <h2>Failed to load posts.</h2>
+            <div>
+                <div className="error">
+                    <h2>Failed to load posts.</h2>
+                    <button type="button"
+                        onClick={() => dispatch(fetchPosts(selectedSubreddit))}>
+                        Reload
+                    </button>
+                </div>
+                
             </div>
-            //Add button to rerun
         );
     };
 
@@ -46,8 +52,11 @@ const Home = () => {
         return (
             <div className="error">
                 <h2>No posts matching "{searchTerm}"</h2>
+                <button type="button"
+                        onClick={() => dispatch(setSearchTerm(''))}>
+                    Go back to home
+                </button>
             </div>
-            //Add button to go home
         );
     };
 

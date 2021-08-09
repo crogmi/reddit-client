@@ -43,16 +43,16 @@ export const redditSlice = createSlice({
                 return;
             }
             state.posts[action.payload].loadingComments = true;
-            state.posts[action.payload].errorComments = false;
+            state.posts[action.payload].hasError = false;
         },
         getCommentsSuccess(state, action) {
             state.posts[action.payload.index].loadingComments = false;
-            state.posts[action.payload].errorComments = false;
+            state.posts[action.payload.index].hasError = false;
             state.posts[action.payload.index].comments = action.payload.comments;
         },
         getCommentsFailed(state, action) {
             state.posts[action.payload].loadingComments = false;
-            state.posts[action.payload].errorComments = true;
+            state.posts[action.payload].hasError = true;
         }
     }
 });
@@ -86,7 +86,7 @@ export const fetchPosts = (subreddit) => async (dispatch) => {
             errorComments: false
         }));
         dispatch(getPostsSuccess(postsWithMetaData));
-    } catch (e) {
+    } catch (error) {
         dispatch(getPostsFailed());
     }
 };
@@ -96,11 +96,12 @@ export const fetchComments = (index, permalink) => async(dispatch) => {
         dispatch(startGetComments(index));
         const comments = await getPostComments(permalink);
         dispatch(getCommentsSuccess({index, comments}));
-    } catch (e) {
+    } catch (error) {
         dispatch(getCommentsFailed(index));
     }
 };
 
+//Need to review for potnential bugs
 const selectPosts = (state) => state.reddit.posts;
 const selectSearchTerm = (state) => state.reddit.searchTerm;
 export const selectSelectedSubreddit = (state) => state.reddit.selectedSubreddit;
