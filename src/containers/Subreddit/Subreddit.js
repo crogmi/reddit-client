@@ -1,21 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchSubreddits, selectSubreddits } from "../../store/subRedditSlice";
 import { setSelectedSubreddit, selectSelectedSubreddit } from "../../store/redditSlice";
 import "./Subreddit.css";
 
 const Subreddit = () => {
-    const dispatch = useDispatch();
-    const subreddits = useSelector(selectSubreddits);
-    const selectedSubreddit = useSelector(selectSelectedSubreddit);
+    // const dispatch = useDispatch();
+    // const subreddits = useSelector(selectSubreddits);
+    // const selectedSubreddit = useSelector(selectSelectedSubreddit);
 
-    useEffect(() => {
-        dispatch(fetchSubreddits());
-    }, [dispatch]);
+    // useEffect(() => {
+    //     dispatch(fetchSubreddits());
+    // }, [dispatch]);
 
     return (
         <div className="subreddit-container">
-            <h2>Subreddits</h2>
+            {/* <h2>Subreddits</h2>
             <ul className="subreddits-list">
                 {subreddits.map((subreddit) => {
                     <li key={subreddit.id}
@@ -29,7 +29,7 @@ const Subreddit = () => {
                         </button>
                     </li>
                 })}
-            </ul>
+            </ul> */}
         </div>
     )
 };
