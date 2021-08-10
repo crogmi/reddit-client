@@ -1,3 +1,14 @@
+:root {
+  --purple: #BB86FC;
+  --mid-purple: #3700B3;
+  --teal: #03DAC5;
+  --dark-grey: #121212;
+  --black: #000000;
+  --white: #FFFFFF;
+  --red: #CF6679;
+  --green: #66cf6d;
+}
+
 body {
   margin: 0;
   font-family: Verdana, Arial, Helvetica, sans-serif;

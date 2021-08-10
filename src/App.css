@@ -1,14 +1,3 @@
-:root {
-  --purple: #BB86FC;
-  --mid-purple: #3700B3;
-  --teal: #03DAC5;
-  --dark-grey: #121212;
-  --black: #000000;
-  --white: #FFFFFF;
-  --red: #CF6679;
-  --green: #66cf6d;
-}
-
 .app {
   text-align: center;
   background-color: var(--dark-grey);
@@ -22,7 +11,7 @@ main, aside {
 }
 
 .content {
-  width: 80%;
+  width: 75%;
   display: grid;
   grid-template-areas: "header header header header"
                        "subreddit posts posts posts"

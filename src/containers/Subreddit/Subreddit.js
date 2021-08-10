@@ -21,16 +21,16 @@ const Subreddits = () => {
                 {subreddits.map((subreddit) => {
                     return (
                         <li key={subreddit.id}
-                            className={`${selectedSubreddit === subreddit.url && "selected-subreddit"} 
-                                      subreddit`}>
+                            className={`${selectedSubreddit === subreddit.url && "selected-subreddit"}
+                                        subreddit`}>
                             <button type="button"
                                     className="subreddit-button"
                                     onClick={() => dispatch(setSelectedSubreddit(subreddit.url))} >
-                                {subreddit.icon_img ? 
+                                {subreddit.icon_img ?
                                     <img src={subreddit.icon_img}
                                         alt={`${subreddit.display_name}`}
-                                        className="subreddit-icon" /> 
-                                    : 
+                                        className="subreddit-icon" />
+                                    :
                                     <Avatar className="subreddit-avatar subreddit-icon"
                                             author={subreddit.display_name} />
                                 }

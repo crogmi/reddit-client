@@ -1,7 +1,7 @@
 .subreddit-container {
-    position: absolute;
-    border: 1px solid var(--white);
-
+    width: 50%;
+    border-radius: 2%;
+    background-color: rgba(255,255,255,0.08);
 }
 
 .subreddits-list {
@@ -16,7 +16,7 @@
 
 .subreddit-icon {
     max-width: 50px;
-    padding-right: 1rem;
+    padding: 0rem 1rem;
 }
 
 .subreddit {
