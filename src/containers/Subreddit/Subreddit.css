@@ -1,0 +1,26 @@
+.subreddit-container {
+    position: absolute;
+    border: 1px solid var(--white);
+
+}
+
+.subreddits-list {
+    list-style: none;
+}
+
+.subreddit-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.subreddit-icon {
+    max-width: 50px;
+    padding-right: 1rem;
+}
+
+.subreddit {
+    padding: 0.5rem;
+}
+
+

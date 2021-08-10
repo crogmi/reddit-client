@@ -16,6 +16,33 @@
   color: var(--white);
 }
 
+main, aside {
+  position: relative;
+  top: 5vh;
+}
+
+.content {
+  width: 80%;
+  display: grid;
+  grid-template-areas: "header header header header"
+                       "subreddit posts posts posts"
+                       "footer footer footer footer";
+}
+
+.navbar {
+  grid-area: header;
+}
+
+.posts {
+  grid-area: posts;
+}
+
+.subreddits {
+  grid-area: subreddit;
+  margin: 0 2rem;
+}
+
+
 button {
   background-color: transparent;
   color: var(--white);

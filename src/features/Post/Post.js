@@ -63,7 +63,7 @@ const Post = (props) => {
                 <img src={preview} alt='' className="post-image" />
             </div>
             <div className="post-footer">
-                <p>Posted by: {author}</p>
+                <p className="post-author">Posted by: {author}</p>
                 <button type="button"
                         className={`icon-action-button ${post.showingComments && "showing-comments"}`}  
                         onClick={() => onToggleComments(permalink)} >

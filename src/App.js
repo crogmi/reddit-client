@@ -7,12 +7,12 @@ import "./App.css";
 const App = ({ match }) => {
   return (
     <div className="app">
-      <Navbar />
-      <body>
-        <main>
+      <Navbar className="navbar" />
+      <body className="content">
+        <main className="posts">
           <Home />
         </main>
-        <aside>
+        <aside className="subreddits">
           <Subreddits />
         </aside>
       </body>
