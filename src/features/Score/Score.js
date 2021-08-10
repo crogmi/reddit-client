@@ -38,7 +38,7 @@ const Score = (props) => {
                 <i class="fas fa-arrow-circle-up score-up"></i>
             </button>
             <p className="score-text">{simplifyNum(score)}</p>
-            <button onClick={downClick} 
+            <button onClick={downClick}
                     style={downStyle}
                     data-testid="down_vote" >
                 <i class="fas fa-arrow-circle-down score-down"></i>

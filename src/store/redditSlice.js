@@ -32,7 +32,7 @@ export const redditSlice = createSlice({
         },
         setSelectedSubreddit(state, action) {
             state.selectedSubreddit = action.payload;
-            state.searchTerm = false;
+            state.searchTerm = "";
         },
         toggleShowingComments(state, action) {
             state.posts[action.payload].showingComments = !state.posts[action.payload].showingComments;
