@@ -5,7 +5,7 @@ import './Post.css';
 // Import feature components to the overall post
 import Comment from "../Comments/Comment";
 import Score from "../Score/Score";
-import { prependToMemberExpression } from "@babel/types";
+import { simplifyNum } from "../../util/SimplifyNumber/SimplifyNumber";
 
 const Post = (props) => {
     const {post, onToggleComments} = props;
@@ -68,7 +68,7 @@ const Post = (props) => {
                         className={`icon-action-button ${post.showingComments && "showing-comments"}`}  
                         onClick={() => onToggleComments(permalink)} >
                     <i class="far fa-comment-alt"></i>
-                    <p className="post-comments">{num_comments}</p>
+                    <p className="post-comments">{simplifyNum(num_comments)}</p>
                 </button>
                 {displayComments()}
             </div>

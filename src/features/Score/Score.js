@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Score.css";
+import { simplifyNum } from "../../util/SimplifyNumber/SimplifyNumber";
 
 const Score = (props) => {
     let score = props.score;
@@ -26,10 +27,6 @@ const Score = (props) => {
         }
     }
 
-    if (score > 999) {
-        score = (score/1000).toFixed(1).concat("K");
-    }
-
     const upStyle = {color: upColor};
     const downStyle = {color: downColor};
 
@@ -40,7 +37,7 @@ const Score = (props) => {
                     data-testid="up_vote" >
                 <i class="fas fa-arrow-circle-up score-up"></i>
             </button>
-            <p className="score-text">{score}</p>
+            <p className="score-text">{simplifyNum(score)}</p>
             <button onClick={downClick} 
                     style={downStyle}
                     data-testid="down_vote" >

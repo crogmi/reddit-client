@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getSubreddits } from "../api/reddit";
 
-export const subredditSlice = createSlice({
+export const subredditsSlice = createSlice({
     name:"subreddits",
     initialState: {
         subreddits: [],
@@ -29,11 +29,9 @@ export const {
     startGetSubreddits,
     getSubredditsSuccess,
     getSubredditsFailed
-} = subredditSlice.actions;
+} = subredditsSlice.actions;
 
-export default subredditSlice.reducer;
-
-// Thunk that gets subreddits
+export default subredditsSlice.reducer;
 
 export const fetchSubreddits = () => async (dispatch) => {
     try {
