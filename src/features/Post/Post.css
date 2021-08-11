@@ -1,23 +1,51 @@
-.post-image {
-    width: 300px;
-}
-
+/* Containers */
 .post-container {
     display: grid;
+    grid-template-columns: 7% 93%;
+    grid-template-areas: "score information";
     background-color: rgba(255,255,255,0.08);
     border-radius: 10px;
     margin: 2rem;
 }
 
+.score-container {
+    grid-area: score;
+    align-self: center;
+    border-right-width: 50%;
+}
+
+.post-info {
+    grid-area: information;
+    height: 100%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    padding-top: 0.75rem;
+}
+
+/* General styling */
+.post-title {
+    margin-bottom: 1rem;
+}
+
+.post-image {
+    max-width: 400px;
+}
+
+/* Footer styling */
 .post-footer {
     justify-self: center;
-    width: 50%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 1rem 0;
 }
 
+/* Comments styling */
 .comments-button {
     display: flex;
     justify-content: space-around;
@@ -25,9 +53,11 @@
     margin-left: 2rem;
 }
 
+.comments-button:hover {
+    color: var(--purple);
+}
+
 .comment-icon {
-    
     font-size: 1rem;
     padding-right: 0.5rem;
-
 }

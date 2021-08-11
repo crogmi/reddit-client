@@ -2,12 +2,12 @@ import React from "react";
 import "./Avatar.css";
 
 const Avatar = (props) => {
-    const { author } = props;
-    const firstInitial = author[0];
+    const { name } = props;
+    const firstInitial = name[0].toUpperCase();
 
     return (
         <div className="avatar">
-            <p>{firstInitial}</p>
+            <p className="initial">{firstInitial}</p>
         </div>
     );
 };

@@ -32,7 +32,7 @@ const Subreddits = () => {
                                         className="subreddit-icon" />
                                     :
                                     <Avatar className="subreddit-avatar subreddit-icon"
-                                            author={subreddit.display_name} />
+                                            name={subreddit.display_name} />
                                 }
                                 <h3 className="subreddit-name">{subreddit.display_name}</h3>
                             </button>

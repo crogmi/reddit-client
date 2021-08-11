@@ -59,20 +59,21 @@ const Post = (props) => {
             <div className="score-container">
                 <Score score={score} />
             </div>
+            <div className="vertical-divider"></div>
             <div className="post-info">
                 <h2 className="post-title">{title}</h2>
                 <img src={preview} alt='' className="post-image" />
+                <div className="post-footer">
+                    <p className="post-author">Posted by: {author}</p>
+                    <button type="button"
+                            className={`icon-action-button ${post.showingComments && "showing-comments"} comments-button`}  
+                            onClick={() => onToggleComments(permalink)} >
+                        <i class="far fa-comment-alt comment-icon"></i>
+                        <p className="post-comments">{simplifyNum(num_comments)}</p>
+                    </button>
+                </div>
+                {displayComments()}
             </div>
-            <div className="post-footer">
-                <p className="post-author">Posted by: {author}</p>
-                <button type="button"
-                        className={`icon-action-button ${post.showingComments && "showing-comments"} comments-button`}  
-                        onClick={() => onToggleComments(permalink)} >
-                    <i class="far fa-comment-alt comment-icon"></i>
-                    <p className="post-comments">{simplifyNum(num_comments)}</p>
-                </button>
-            </div>
-            {displayComments()}
         </article>
     )
 }
