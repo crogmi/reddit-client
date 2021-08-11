@@ -1,0 +1,13 @@
+/* Font styling */
+.score-up  {
+    font-size: 1.25rem;
+}
+
+.score-down {
+    font-size: 1.25rem;
+}
+
+.score-text {
+    font-size: 1.5rem;
+    padding: 5%;
+}
