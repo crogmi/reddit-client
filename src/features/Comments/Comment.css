@@ -15,4 +15,5 @@
 
 .comment-text {
     grid-area: comment;
+    margin-right: 1rem;
 }
