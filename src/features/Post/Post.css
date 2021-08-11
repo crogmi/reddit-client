@@ -6,7 +6,6 @@
     background-color: rgba(255,255,255,0.08);
     border-radius: 10px;
     margin: 2rem;
-    padding: 0.75rem 0.75rem 0 0.75rem;
 }
 
 .score-container {
@@ -24,6 +23,7 @@
     justify-content: center;
     align-items: center;
     justify-self: center;
+    padding-top: 0.75rem;
 }
 
 /* General styling */
@@ -51,6 +51,10 @@
     justify-content: space-around;
     align-items: center;
     margin-left: 2rem;
+}
+
+.comments-button:hover {
+    color: var(--purple);
 }
 
 .comment-icon {
