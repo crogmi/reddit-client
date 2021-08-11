@@ -7,15 +7,21 @@ import "./App.css";
 const App = ({ match }) => {
   return (
     <div className="app">
-      <Navbar className="navbar" />
       <body className="content">
-        <main className="posts">
-          <Home />
-        </main>
-        <aside className="subreddits">
-          <Subreddits />
-        </aside>
+        <div className="grid-container">
+          <Navbar className="navbar" />
+          <main className="posts">
+            <Home />
+          </main>
+          <aside className="subreddits">
+            <Subreddits />
+          </aside>
+          <footer className="footer">
+            Created by @crogmi
+          </footer>
+        </div>
       </body>
+
     </div>
   );
 }

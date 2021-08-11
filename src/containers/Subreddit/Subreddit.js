@@ -15,8 +15,8 @@ const Subreddits = () => {
     }, [dispatch]);
 
     return (
-        <div className="subreddit-container">
-            <h2>Subreddits</h2>
+        <div className="subreddits-container">
+            <h2 className="subreddits-title">Subreddits</h2>
             <ul className="subreddits-list">
                 {subreddits.map((subreddit) => {
                     return (
