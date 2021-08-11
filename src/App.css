@@ -1,20 +1,44 @@
-:root {
-  --purple: #BB86FC;
-  --mid-purple: #3700B3;
-  --teal: #03DAC5;
-  --dark-grey: #121212;
-  --black: #000000;
-  --white: #FFFFFF;
-  --red: #CF6679;
-  --green: #66cf6d;
-}
-
 .app {
-  text-align: center;
   background-color: var(--dark-grey);
   font-family: Verdana, Arial, Helvetica, sans-serif;
   color: var(--white);
 }
+
+.grid-container{
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns:  20% repeat(2, 1fr) 5%;
+  grid-template-rows: repeat(auto-fill, max-content);
+  grid-template-areas: ". navbar navbar ."
+                       "subreddits posts posts ."
+                       "footer footer footer footer";
+}
+
+.navbar {
+  grid-area: navbar;
+}
+
+.posts {
+  height: 100%;
+  width: 100%;
+  grid-area: posts;
+  text-align: center;
+}
+
+.subreddits {
+  grid-area: subreddits;
+  margin: 0 2rem;
+}
+
+.footer {
+  grid-area: footer;
+  height: 3vh;
+  text-align: right;
+  font-size: 0.75rem;
+  margin-right: 2%;
+}
+
 
 button {
   background-color: transparent;

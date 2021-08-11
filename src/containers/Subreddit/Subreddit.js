@@ -15,24 +15,26 @@ const Subreddits = () => {
     }, [dispatch]);
 
     return (
-        <div className="subreddit-container">
-            <h2>Subreddits</h2>
+        <div className="subreddits-container">
+            <h2 className="subreddits-title">Subreddits</h2>
             <ul className="subreddits-list">
                 {subreddits.map((subreddit) => {
                     return (
                         <li key={subreddit.id}
-                            className={`${selectedSubreddit === subreddit.url && "selected-subreddit"}`}>
+                            className={`${selectedSubreddit === subreddit.url && "selected-subreddit"}
+                                        subreddit`}>
                             <button type="button"
+                                    className="subreddit-button"
                                     onClick={() => dispatch(setSelectedSubreddit(subreddit.url))} >
-                                {subreddit.icon_img ? 
+                                {subreddit.icon_img ?
                                     <img src={subreddit.icon_img}
                                         alt={`${subreddit.display_name}`}
-                                        className="subreddit-icon" /> 
-                                    : 
-                                    <Avatar className="subreddit-avatar"
+                                        className="subreddit-icon" />
+                                    :
+                                    <Avatar className="subreddit-avatar subreddit-icon"
                                             author={subreddit.display_name} />
                                 }
-                                {subreddit.display_name}
+                                <h3 className="subreddit-name">{subreddit.display_name}</h3>
                             </button>
                         </li>
                     );
